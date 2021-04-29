@@ -1,6 +1,10 @@
 {
   "name": "ld-echarts",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "author": {
+    "name": "niuguimin",
+    "email": "niuguimin@sdnydb.com"
+  },
   "description": "Simple Vue.js component for echarts",
   "homepage": "https://github.com/ngm-Irelia/ld-echarts#readme",
   "license": "MIT",
