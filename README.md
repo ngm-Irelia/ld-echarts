@@ -12,17 +12,12 @@ npm install ld-echarts --save
 Add LdEcharts component to your project
 
 ```vue
-<template>
-  <div>
-    <ld-echarts  />
-  </div>
-</template>
 
 <script>
-import {} from 'ld-echarts'
+import { BarChart } from 'ld-echarts'
 
 export default {
-  components: {  },
+  components: { BarChart },
   data() {
     return {
     }
@@ -41,4 +36,13 @@ npm run serve
 ```
 
 # LdEcharts component interface
+
+
+# Change logs
+
+## 1.1.1
+init
+
+## 1.3.2
+支持柱状图，横向柱状图，折线图，饼图
 
