@@ -1,6 +1,6 @@
 {
   "name": "ld-echarts",
-  "version": "1.0.1",
+  "version": "1.1.2",
   "author": {
     "name": "niuguimin",
     "email": "niuguimin@sdnydb.com"
@@ -8,20 +8,17 @@
   "description": "Simple Vue.js component for echarts",
   "homepage": "https://github.com/ngm-Irelia/ld-echarts#readme",
   "license": "MIT",
-  "main": "dist/list-scroller.ssr.js",
-  "browser": "dist/list-scroller.esm.js",
-  "module": "dist/list-scroller.esm.js",
-  "unpkg": "dist/list-scroller.min.js",
+  "main": "src/index.js",
+  "browser": "src/index.js",
+  "module": "src/index.js",
+  "unpkg": "src/index.js",
   "files": [
-    "dist/*",
+    "src/*",
     "src/**/*.vue"
   ],
   "scripts": {
     "serve": "vue-cli-service serve demo/serve.js",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "start": "vue-cli-service serve demo/serve.js",
     "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -48,12 +45,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "minimist": "^1.2.5",
     "prettier": "^2.0.1",
-    "rollup": "^2.20.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-vue": "^5.1.9",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.1",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },

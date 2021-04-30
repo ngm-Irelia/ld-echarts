@@ -40,5 +40,5 @@ npm install
 npm run serve
 ```
 
-# ListScroller component interface
+# LdEcharts component interface
 
