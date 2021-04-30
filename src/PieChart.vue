@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="barChartBox"
+    ref="pieChartBox"
     style="width: 100%; height: 100%"
   ></div>
 </template>
@@ -9,10 +9,10 @@
 import * as echarts from 'echarts'
 
 /**
- * 柱状图
+ * 饼图
  */
 export default {
-  name: 'BarChart',
+  name: 'PieChart',
   props: {
     id: {
       type: String,
@@ -41,8 +41,8 @@ export default {
     }
   },
   mounted() {
-    let box = this.$refs.barChartBox
-    this.addBarChart(
+    let box = this.$refs.pieChartBox
+    this.addPieChart(
       this.$props.title,
       box,
       this.$props.data,
@@ -52,8 +52,8 @@ export default {
   watch: {
     series(newSeries, oldSeries) {
       if(!this.diff(newSeries, oldSeries)) {
-        let box = this.$refs.barChartBox
-        this.addBarChart(
+        let box = this.$refs.pieChartBox
+        this.addPieChart(
           this.$props.title,
           box,
           this.$props.data,
@@ -64,13 +64,14 @@ export default {
   },
   methods: {
     /**
-     * 柱状图
+     * 饼图
      * @param {*} title 标题
-     * @param {*} dom 图表存放的元素
+     * @param {*} dom 图表存放的元素id
      * @param {*} data 数据
      * @param {*} series 配置
      */
-    addBarChart(title, dom, data, series) {
+    addPieChart(title, dom, data, series) {
+      console.log(series)
       if (this.myChart) {
         this.myChart.dispose()
       }
@@ -79,61 +80,16 @@ export default {
         title: {
           text: title,
         },
-        tooltip: {},
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          top: '15%',
-          containLabel: true,
+        tooltip: {
+          trigger: 'item',
+          formatter: "{b}:{c}"
         },
-        xAxis: {
-          data: data,
-          axisLine: {
-            lineStyle: {
-              color: '#386db3',
-            },
-          },
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: '#fff',
-              fontSize: 10
-            },
-            interval: 0,  
-            rotate: 25,
-          },
-          axisTick: {
-            show: false
-          },
-          spiltLine: {
-            show: false,
-            lineStyle: {
-              color: '#fff',
-            },
-          },
+       legend: {
+          orient: 'vertical',
+          x: 'right',
         },
-        yAxis: {
-          //网格样式
-          splitLine: {
-            show: true,
-            lineStyle: {
-              color: ['#adf4fd'],
-              width: 0.3,
-              type: 'solid',
-            },
-          },
-          axisTick: {
-            show: false,
-          },
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: '#fff',
-            },
-          },
-        },
-        series: series,
+        calculable: true,
+        series: series
       })
     },
     diff(obj1, obj2) {

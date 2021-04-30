@@ -1,6 +1,6 @@
 <template>
   <div
-    ref="barChartBox"
+    ref="axisBarChartBox"
     style="width: 100%; height: 100%"
   ></div>
 </template>
@@ -9,10 +9,10 @@
 import * as echarts from 'echarts'
 
 /**
- * 柱状图
+ * 横向柱状图
  */
 export default {
-  name: 'BarChart',
+  name: 'AxisBarChart',
   props: {
     id: {
       type: String,
@@ -41,8 +41,8 @@ export default {
     }
   },
   mounted() {
-    let box = this.$refs.barChartBox
-    this.addBarChart(
+    let box = this.$refs.axisBarChartBox
+    this.addAxisBarChart(
       this.$props.title,
       box,
       this.$props.data,
@@ -52,8 +52,8 @@ export default {
   watch: {
     series(newSeries, oldSeries) {
       if(!this.diff(newSeries, oldSeries)) {
-        let box = this.$refs.barChartBox
-        this.addBarChart(
+        let box = this.$refs.axisBarChartBox
+        this.addAxisBarChart(
           this.$props.title,
           box,
           this.$props.data,
@@ -70,7 +70,7 @@ export default {
      * @param {*} data 数据
      * @param {*} series 配置
      */
-    addBarChart(title, dom, data, series) {
+    addAxisBarChart(title, dom, data, series) {
       if (this.myChart) {
         this.myChart.dispose()
       }
@@ -84,53 +84,39 @@ export default {
           left: '3%',
           right: '4%',
           bottom: '3%',
-          top: '15%',
+          top: '5%',
           containLabel: true,
         },
         xAxis: {
-          data: data,
-          axisLine: {
-            lineStyle: {
-              color: '#386db3',
-            },
-          },
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: '#fff',
-              fontSize: 10
-            },
-            interval: 0,  
-            rotate: 25,
-          },
-          axisTick: {
-            show: false
-          },
-          spiltLine: {
-            show: false,
-            lineStyle: {
-              color: '#fff',
-            },
-          },
-        },
-        yAxis: {
+          type: 'value',
+          boundaryGap: [0, 0.01],
           //网格样式
           splitLine: {
             show: true,
             lineStyle: {
               color: ['#adf4fd'],
               width: 0.3,
-              type: 'solid',
-            },
+              type: 'solid'
+            }
           },
           axisTick: {
-            show: false,
+            show: false
           },
           axisLabel: {
             show: true,
             textStyle: {
-              color: '#fff',
-            },
+              color: '#fff'
+            }
+          },
+        },
+        yAxis: {
+          type: 'category',
+          data: data,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#fff'
+            }
           },
         },
         series: series,

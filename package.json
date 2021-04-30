@@ -1,6 +1,6 @@
 {
   "name": "ld-echarts",
-  "version": "1.1.2",
+  "version": "1.2.2",
   "author": {
     "name": "niuguimin",
     "email": "niuguimin@sdnydb.com"
@@ -23,7 +23,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "echarts": "^5.1.1"
+    "echarts": "^4.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
