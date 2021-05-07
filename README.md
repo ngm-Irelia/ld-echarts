@@ -1,12 +1,19 @@
-
 # ld-echarts
 
-# Usage
+* 作者：niuguimin
+* 邮箱：niuguimin@sdnydb.com
+* 版本：**`1.3.2`**
+
+## 安装
+
+`ld-*` 组件 命名空间统一为 `ld-`，请使用以下命令进行组件安装。
 
 Add package to your project
 
 ```bash
 npm install ld-echarts --save
+or
+yarn install ld-echarts --save
 ```
 
 Add LdEcharts component to your project
@@ -35,7 +42,11 @@ npm install
 npm run serve
 ```
 
-# LdEcharts component interface
+# Code
+
+https://github.com/ngm-Irelia/ld-echarts
+
+包含demo文件，可运行查看
 
 
 # Change logs
@@ -46,3 +57,5 @@ init
 ## 1.3.2
 支持柱状图，横向柱状图，折线图，饼图
 
+## 1.3.3
+readme
