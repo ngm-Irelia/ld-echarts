@@ -99,14 +99,26 @@
       />
     </div>
     
+
+    <!-- <button @click="gismapClickBtn">地图 GisMap</button>
+    <div style="width: 600px; height: 400px;">
+      <gis-map
+        :type="'advance'"
+        :mapArea="'shandong'"
+        :areaData="[]"
+        :lineData="[]"
+        :mapJson="[]"
+      />
+    </div> -->
+
   </div>
 </template>
 
 <script>
-import {BarChart, AxisBarChart, LineChart, PieChart} from '@/index'
+import {BarChart, AxisBarChart, LineChart, PieChart, GisMap} from '@/index'
 
 export default {
-  components: { BarChart, AxisBarChart, LineChart, PieChart },
+  components: { BarChart, AxisBarChart, LineChart, PieChart, GisMap },
   data() {
     return {
       title: "demo",
@@ -115,12 +127,13 @@ export default {
       secondAxisData: ['1', '2'],
       secondValueData: [333, 33],
       threeValueData: [{value: 1048, name: '搜索引擎'},
-                {value: 735, name: '直接访问'},
-                {value: 580, name: '邮件营销'},
-                {value: 484, name: '联盟'},
-                {value: 484, name: '联盟1'},
-                {value: 484, name: '联盟2'},
-                {value: 300, name: '视频广告'}]
+        {value: 735, name: '直接访问'},
+        {value: 580, name: '邮件营销'},
+        {value: 484, name: '联盟'},
+        {value: 484, name: '联盟1'},
+        {value: 484, name: '联盟2'},
+        {value: 300, name: '视频广告'}
+      ]
     }
   },
   methods: { 
